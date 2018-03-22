@@ -1,4 +1,6 @@
 PODS:
+  - camera (0.0.1):
+    - Flutter
   - Firebase/Auth (4.10.1):
     - Firebase/Core
     - FirebaseAuth (= 4.4.4)
@@ -55,11 +57,14 @@ PODS:
   - nanopb/encode (0.3.8)
 
 DEPENDENCIES:
+  - camera (from `Pods/.symlinks/plugins/camera-0.1.1/ios`)
   - firebase_auth (from `Pods/.symlinks/plugins/firebase_auth-0.5.1/ios`)
   - Flutter (from `Pods/.symlinks/flutter/ios`)
   - google_sign_in (from `Pods/.symlinks/plugins/google_sign_in-3.0.0/ios`)
 
 EXTERNAL SOURCES:
+  camera:
+    :path: Pods/.symlinks/plugins/camera-0.1.1/ios
   firebase_auth:
     :path: Pods/.symlinks/plugins/firebase_auth-0.5.1/ios
   Flutter:
@@ -68,6 +73,7 @@ EXTERNAL SOURCES:
     :path: Pods/.symlinks/plugins/google_sign_in-3.0.0/ios
 
 SPEC CHECKSUMS:
+  camera: be01db3b2193839f9af56a9db99b7fea444d35f3
   Firebase: 92c6ba593e32db0defde464a9adc981d5cb49f97
   firebase_auth: 499d5bfb249606a276f6bddf292a3b2d44139f75
   FirebaseAnalytics: 3dfae28d4a5e06f86c4fae830efc2ad3fadb19bc

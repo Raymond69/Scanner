@@ -14,6 +14,8 @@
     		</array>
     	</dict>
     </array>
+    <key>NSCameraUsageDescription</key>
+    <string>Scanner want to access your camera. Do you agree ?</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
