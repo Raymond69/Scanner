@@ -7,6 +7,7 @@ dependencies:
   google_sign_in: "^3.0.0"
   firebase_auth: "^0.5.1"
   camera: "^0.1.1"
+  path_provider: "^0.4.0"
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -23,6 +24,9 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
   assets:
+    - assets/icons/album.png
+    - assets/icons/profile.png
+    - assets/icons/camera.png
     - assets/icons/facebook.svg
     - assets/icons/google.svg
     - assets/icons/facebook.png

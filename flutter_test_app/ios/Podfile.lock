@@ -55,12 +55,15 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - path_provider (0.0.1):
+    - Flutter
 
 DEPENDENCIES:
   - camera (from `Pods/.symlinks/plugins/camera-0.1.1/ios`)
   - firebase_auth (from `Pods/.symlinks/plugins/firebase_auth-0.5.1/ios`)
   - Flutter (from `Pods/.symlinks/flutter/ios`)
   - google_sign_in (from `Pods/.symlinks/plugins/google_sign_in-3.0.0/ios`)
+  - path_provider (from `Pods/.symlinks/plugins/path_provider-0.4.0/ios`)
 
 EXTERNAL SOURCES:
   camera:
@@ -71,6 +74,8 @@ EXTERNAL SOURCES:
     :path: Pods/.symlinks/flutter/ios
   google_sign_in:
     :path: Pods/.symlinks/plugins/google_sign_in-3.0.0/ios
+  path_provider:
+    :path: Pods/.symlinks/plugins/path_provider-0.4.0/ios
 
 SPEC CHECKSUMS:
   camera: be01db3b2193839f9af56a9db99b7fea444d35f3
@@ -87,6 +92,7 @@ SPEC CHECKSUMS:
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 390ea358e5a0d0133153806f744662dad933d06b
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  path_provider: 09407919825bfe3c2deae39453b7a5b44f467873
 
 PODFILE CHECKSUM: 0420ab312a523ae0eecfb1fc19ea51dd82cc17c7
 

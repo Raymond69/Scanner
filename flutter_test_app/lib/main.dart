@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:camera/camera.dart';
+import 'dart:async';
 import 'login.dart';
 import 'home.dart';
 import 'password.dart';
 import 'signup.dart';
 
-void main() => runApp(new MyApp());
+List<CameraDescription> cameras;
+
+Future<Null> main() async {
+  cameras = await availableCameras();
+
+  runApp(new MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -18,7 +26,7 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         '/signup': (_) => new SignUpPage(),
         '/password': (_) => new PasswordPage(),
-        '/camera': (_) => new HomePage(),
+        '/camera': (_) => new HomePage(cameras: cameras),
       },
     );
   }

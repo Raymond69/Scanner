@@ -49,10 +49,9 @@ class _LoginPageState extends State<Login> {
   }
 
   /* Trigger l'authentification Firebase */
-  void _runLogin(FirebaseUser user) {
+  void _runLogin(BuildContext context, FirebaseUser user) {
     if (user != null) {
-      /* push route */
-      print(user);
+      Navigator.pushNamed(context, "/camera");
     }
     else {
       Scaffold.of(context).showSnackBar(
@@ -154,7 +153,7 @@ class _LoginPageState extends State<Login> {
                           color: Colors.blue,
                           onPressed: () {
                             _submitLogin()
-                                .then((FirebaseUser user) => _runLogin(user))
+                                .then((FirebaseUser user) => _runLogin(context, user))
                                 .catchError((e) {
                               _scaffoldKey.currentState.showSnackBar(
                                   new SnackBar(
@@ -197,7 +196,7 @@ class _LoginPageState extends State<Login> {
 
                           onPressed: () {
                             _handleSignIn()
-                                .then((FirebaseUser user) => _runLogin(user))
+                                .then((FirebaseUser user) => _runLogin(context, user))
                                 .catchError((e) => print(e));
                           },
                           child: new Image.asset(
