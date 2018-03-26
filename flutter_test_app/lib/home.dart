@@ -18,11 +18,15 @@ class _HomePageState extends State<HomePage> {
   CameraDescription inactiveCamera;
   int pictureCount = 0;
   String imagePath;
-  bool opening = false;
+  bool captured;
+  List<Widget> buttons;
 
   @override
   void initState() {
     super.initState();
+
+    buttons = [];
+    captured = false;
 
     inactiveCamera = widget.cameras[1];
 
@@ -41,20 +45,127 @@ class _HomePageState extends State<HomePage> {
     super.dispose();
   }
 
+  List<Widget> isCaptured() {
+    switch (captured) {
+      case true :
+        if (buttons != null)
+          buttons.clear();
+        buttons.add(
+            new FlatButton(
+              onPressed: null,
+              child: new Image.asset(
+                "assets/icons/send.png",
+                width: 35.0,
+                height: 35.0,
+              ),
+            )
+        );
+        buttons.add(
+            new FlatButton(
+              onPressed: () {
+                captured = false;
+                setState(() {});
+                controller.start();
+              },
+              child: new Image.asset(
+                "assets/icons/delete.png",
+                width: 35.0,
+                height: 35.0,
+              ),
+            )
+        );
+        buttons.add(
+            new Container(
+              width: 35.0,
+              height: 35.0,
+            )
+        );
+        buttons.add(
+            new Container(
+              width: 35.0,
+              height: 35.0,
+            )
+        );
+        buttons.add(
+            new Container(
+              width: 35.0,
+              height: 35.0,
+            )
+        );
+        return buttons;
+        break;
+      case false :
+        if (buttons != null)
+          buttons.clear();
+        buttons.add(
+            new FlatButton(
+              onPressed: null,
+              child: new Image.asset(
+                "assets/icons/album.png",
+                width: 35.0,
+                height: 35.0,
+              ),
+            )
+        );
+        buttons.add(
+            new Container()
+        );
+        buttons.add(
+          new Image.asset(
+            "assets/icons/camera.png",
+            width: 40.0,
+            height: 40.0,
+          )
+        );
+        buttons.add(
+            new FloatingActionButton(
+              backgroundColor: Colors.transparent,
+              child: new LayoutBuilder(
+                builder: (context, constraints) {
+                  return new Icon(
+                    Icons.camera,
+                    color: Colors.blue,
+                    size: constraints.biggest.height,
+                  );
+                },
+              ),
+              onPressed: controller.value.isStarted ? capture : null,
+            )
+        );
+        buttons.add(
+          new FlatButton(
+            onPressed: null,
+            child: new Image.asset(
+              "assets/icons/profile.png",
+              width: 35.0,
+              height: 35.0,
+            ),
+          ),
+        );
+        return buttons;
+        break;
+      default:
+        return null;
+    }
+  }
+
   Future<Null> capture() async {
     if (controller.value.isStarted) {
 
+      captured = true;
+
       controller.stop();
+
+      setState(() {});
 
       final Directory Dir = await getApplicationDocumentsDirectory();
       if (!mounted) {
         return;
       }
       final String dirPath = Dir.path;
-      print(dirPath);
 
-      controller.start();
-//      final String path = '$tempPath/picture${pictureCount++}.jpg';
+
+//      final String path = '$dirPath/picture${pictureCount++}.jpg';
 //      await controller.capture(path);
 //      if (!mounted) {
 //        return;
@@ -82,8 +193,6 @@ class _HomePageState extends State<HomePage> {
                 child: new FlatButton(
                   onPressed: () async {
 
-                    print(controller);
-
                     final CameraController tempController = controller;
                     controller = null;
 
@@ -101,12 +210,13 @@ class _HomePageState extends State<HomePage> {
                     setState(() {});
 
                   },
-                  child: new Image.asset(
-                    "assets/icons/camera.png",
-                    width: 40.0,
-                    height: 40.0,
-                  ),
+                  child: isCaptured().elementAt(2),
                 ),
+              ),
+              new Container(
+                alignment: Alignment.topLeft,
+                margin: const EdgeInsets.only(top: 25.0),
+                child: buttons.elementAt(1),
               ),
               new Container(
                 alignment: Alignment.bottomCenter,
@@ -115,39 +225,13 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     new Expanded(
-                      child: new FlatButton(
-                        onPressed: null,
-                        child: new Image.asset(
-                          "assets/icons/profile.png",
-                          width: 35.0,
-                          height: 35.0,
-                        ),
-                      ),
+                      child: isCaptured().elementAt(4),
                     ),
                     new Expanded(
-                        child: new FloatingActionButton(
-                          backgroundColor: Colors.transparent,
-                          child: new LayoutBuilder(
-                            builder: (context, constraint) {
-                              return new Icon(
-                                Icons.camera,
-                                color: Colors.blue,
-                                size: constraint.biggest.height,
-                              );
-                            },
-                          ),
-                          onPressed: controller.value.isStarted ? capture : null,
-                        )
+                        child: isCaptured().elementAt(3),
                     ),
                     new Expanded(
-                      child: new FlatButton(
-                        onPressed: null,
-                        child: new Image.asset(
-                          "assets/icons/album.png",
-                          width: 35.0,
-                          height: 35.0,
-                        ),
-                      ),
+                      child: isCaptured().elementAt(0),
                     ),
                   ],
                 ),

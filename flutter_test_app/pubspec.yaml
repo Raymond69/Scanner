@@ -24,6 +24,8 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
   assets:
+    - assets/icons/delete.png
+    - assets/icons/send.png
     - assets/icons/album.png
     - assets/icons/profile.png
     - assets/icons/camera.png
