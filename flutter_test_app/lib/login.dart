@@ -4,14 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:camera/camera.dart';
+import 'home.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 final GoogleSignIn _googleSignIn = new GoogleSignIn();
 
 class Login extends StatefulWidget {
-  Login({Key key, this.title}) : super(key: key);
+  Login({Key key, this.cameras}) : super(key: key);
 
-  final String title;
+  final List<CameraDescription> cameras;
 
   @override
   _LoginPageState createState() => new _LoginPageState();
@@ -51,7 +53,10 @@ class _LoginPageState extends State<Login> {
   /* Trigger l'authentification Firebase */
   void _runLogin(BuildContext context, FirebaseUser user) {
     if (user != null) {
-      Navigator.pushNamed(context, "/camera");
+      Navigator.push(context, new MaterialPageRoute(
+          builder: (BuildContext context) => new HomePage(cameras: widget.cameras, user: user)
+        )
+      );
     }
     else {
       Scaffold.of(context).showSnackBar(

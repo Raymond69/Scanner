@@ -7,9 +7,15 @@ PODS:
   - Firebase/Core (4.10.1):
     - FirebaseAnalytics (= 4.1.0)
     - FirebaseCore (= 4.0.17)
+  - Firebase/Storage (4.10.1):
+    - Firebase/Core
+    - FirebaseStorage (= 2.1.3)
   - firebase_auth (0.0.1):
     - Firebase/Auth
     - Firebase/Core
+    - Flutter
+  - firebase_storage (0.0.1):
+    - Firebase/Storage
     - Flutter
   - FirebaseAnalytics (4.1.0):
     - FirebaseCore (~> 4.0)
@@ -24,6 +30,10 @@ PODS:
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
   - FirebaseInstanceID (2.0.9):
     - FirebaseCore (~> 4.0)
+  - FirebaseStorage (2.1.3):
+    - FirebaseAnalytics (~> 4.1)
+    - FirebaseCore (~> 4.0)
+    - GTMSessionFetcher/Core (~> 1.1)
   - Flutter (1.0.0)
   - google_sign_in (0.0.1):
     - Flutter
@@ -59,17 +69,20 @@ PODS:
     - Flutter
 
 DEPENDENCIES:
-  - camera (from `Pods/.symlinks/plugins/camera-0.1.1/ios`)
-  - firebase_auth (from `Pods/.symlinks/plugins/firebase_auth-0.5.1/ios`)
+  - camera (from `Pods/.symlinks/plugins/camera-0.1.2/ios`)
+  - firebase_auth (from `Pods/.symlinks/plugins/firebase_auth-0.5.2/ios`)
+  - firebase_storage (from `Pods/.symlinks/plugins/firebase_storage-0.2.0/ios`)
   - Flutter (from `Pods/.symlinks/flutter/ios`)
   - google_sign_in (from `Pods/.symlinks/plugins/google_sign_in-3.0.0/ios`)
   - path_provider (from `Pods/.symlinks/plugins/path_provider-0.4.0/ios`)
 
 EXTERNAL SOURCES:
   camera:
-    :path: Pods/.symlinks/plugins/camera-0.1.1/ios
+    :path: Pods/.symlinks/plugins/camera-0.1.2/ios
   firebase_auth:
-    :path: Pods/.symlinks/plugins/firebase_auth-0.5.1/ios
+    :path: Pods/.symlinks/plugins/firebase_auth-0.5.2/ios
+  firebase_storage:
+    :path: Pods/.symlinks/plugins/firebase_storage-0.2.0/ios
   Flutter:
     :path: Pods/.symlinks/flutter/ios
   google_sign_in:
@@ -81,10 +94,12 @@ SPEC CHECKSUMS:
   camera: be01db3b2193839f9af56a9db99b7fea444d35f3
   Firebase: 92c6ba593e32db0defde464a9adc981d5cb49f97
   firebase_auth: 499d5bfb249606a276f6bddf292a3b2d44139f75
+  firebase_storage: 1cce0976d0b4f144e8241662255ade6f84aa0577
   FirebaseAnalytics: 3dfae28d4a5e06f86c4fae830efc2ad3fadb19bc
   FirebaseAuth: d040bb7a9db6dfc29d0e7ec82d48be51352b2581
   FirebaseCore: 872307b001bbefda1dfa0dbfffa50a6919023d4a
   FirebaseInstanceID: d2058a35e9bebda1b6dd42486b84917bde552a9d
+  FirebaseStorage: 9a863a2bb96c406958eeff7c2f1dfa9f44c44a13
   Flutter: 9d0fac939486c9aba2809b7982dfdbb47a7b0296
   google_sign_in: 64523e9b42c475b01b726ff87e450425ea6d15bc
   GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac

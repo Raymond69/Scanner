@@ -1,13 +1,16 @@
 import 'dart:io';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:path_provider/path_provider.dart';
+import 'results.dart';
 import 'dart:async';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key, this.cameras}) : super(key: key);
+  HomePage({Key key, this.cameras, this.user}) : super(key: key);
 
   final List<CameraDescription> cameras;
+  final FirebaseUser user;
 
   @override
   _HomePageState createState() => new _HomePageState();
@@ -52,7 +55,17 @@ class _HomePageState extends State<HomePage> {
           buttons.clear();
         buttons.add(
             new FlatButton(
-              onPressed: null,
+              onPressed: () {
+                captured = false;
+                setState(() {});
+                controller.start();
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                        builder: (BuildContext context) => new ResultsPage(imagePath: imagePath, user: widget.user),
+                    )
+                );
+              },
               child: new Image.asset(
                 "assets/icons/send.png",
                 width: 35.0,
@@ -154,8 +167,6 @@ class _HomePageState extends State<HomePage> {
 
       captured = true;
 
-      controller.stop();
-
       setState(() {});
 
       final Directory Dir = await getApplicationDocumentsDirectory();
@@ -165,16 +176,18 @@ class _HomePageState extends State<HomePage> {
       final String dirPath = Dir.path;
 
 
-//      final String path = '$dirPath/picture${pictureCount++}.jpg';
-//      await controller.capture(path);
-//      if (!mounted) {
-//        return;
-//      }
-//      setState(
-//            () {
-//          imagePath = path;
-//        },
-//      );
+      final String path = '$dirPath/picture${pictureCount++}.jpg';
+      await controller.capture(path);
+      if (!mounted) {
+        return;
+      }
+      setState(
+            () {
+          imagePath = path;
+        },
+      );
+
+      controller.stop();
     }
   }
 

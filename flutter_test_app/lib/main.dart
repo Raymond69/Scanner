@@ -5,6 +5,7 @@ import 'login.dart';
 import 'home.dart';
 import 'password.dart';
 import 'signup.dart';
+import 'results.dart';
 
 List<CameraDescription> cameras;
 
@@ -22,11 +23,12 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: new Login(title: 'Flutter Demo Home Page'),
+      home: new Login(cameras: cameras),
       routes: <String, WidgetBuilder>{
         '/signup': (_) => new SignUpPage(),
         '/password': (_) => new PasswordPage(),
         '/camera': (_) => new HomePage(cameras: cameras),
+        '/results': (_) => new ResultsPage(),
       },
     );
   }
