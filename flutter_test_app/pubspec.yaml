@@ -27,6 +27,11 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
   assets:
+    - assets/images/nomakeup.png
+    - assets/images/nolip.png
+    - assets/images/noeye.png
+    - assets/images/lipeye.png
+    - assets/icons/sorry.png
     - assets/icons/anger.png
     - assets/icons/contempt.png
     - assets/icons/disgust.png
