@@ -27,6 +27,17 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
   assets:
+    - assets/icons/anger.png
+    - assets/icons/contempt.png
+    - assets/icons/disgust.png
+    - assets/icons/fear.png
+    - assets/icons/hapinness.png
+    - assets/icons/neutral.png
+    - assets/icons/sadness.png
+    - assets/icons/surprised.png
+    - assets/icons/female-sign.png
+    - assets/icons/masculine.png
+    - assets/icons/thinking.png
     - assets/icons/delete.png
     - assets/icons/send.png
     - assets/icons/album.png
