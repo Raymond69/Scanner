@@ -148,11 +148,11 @@ class _ResultsPageState extends State<ResultsPage> {
                     new Padding(padding: new EdgeInsets.only(top: 10.0)),
                     new Center(
                       child: new Title(
-                          color: Colors.blue,
+                          color: Colors.pink[800],
                           child: new Text(
                             key,
-                            style: const TextStyle(
-                                color: Colors.blue,
+                            style: new TextStyle(
+                                color: Colors.pink[800],
                                 fontSize: 50.0
                             ),
 
@@ -189,11 +189,11 @@ class _ResultsPageState extends State<ResultsPage> {
                     new Padding(padding: new EdgeInsets.only(top: 10.0)),
                     new Center(
                       child: new Title(
-                          color: Colors.blue,
+                          color: Colors.pink[800],
                           child: new Text(
                             key,
-                            style: const TextStyle(
-                                color: Colors.blue,
+                            style: new TextStyle(
+                                color: Colors.pink[800],
                                 fontSize: 50.0
                             ),
 
@@ -207,8 +207,8 @@ class _ResultsPageState extends State<ResultsPage> {
                         height: 250.0,
                         child: new Text(
                           "${value.toStringAsFixed(0)} yo",
-                          style: const TextStyle(
-                              color: Colors.blue,
+                          style: new TextStyle(
+                              color: Colors.pink[800],
                               fontSize: 60.0
                           ),
                         )
@@ -233,11 +233,11 @@ class _ResultsPageState extends State<ResultsPage> {
                     new Padding(padding: new EdgeInsets.only(top: 10.0)),
                     new Center(
                       child: new Title(
-                          color: Colors.blue,
+                          color: Colors.pink[800],
                           child: new Text(
                             key,
-                            style: const TextStyle(
-                                color: Colors.blue,
+                            style: new TextStyle(
+                                color: Colors.pink[800],
                                 fontSize: 50.0
                             ),
 
@@ -282,11 +282,11 @@ class _ResultsPageState extends State<ResultsPage> {
                       new Padding(padding: new EdgeInsets.only(top: 10.0)),
                       new Center(
                         child: new Title(
-                            color: Colors.blue,
+                            color: Colors.pink[800],
                             child: new Text(
                               key,
-                              style: const TextStyle(
-                                  color: Colors.blue,
+                              style: new TextStyle(
+                                  color: Colors.pink[800],
                                   fontSize: 50.0
                               ),
 
@@ -345,11 +345,11 @@ class _ResultsPageState extends State<ResultsPage> {
                   new Padding(padding: new EdgeInsets.all(10.0)),
                   new Center(
                     child: new Title(
-                        color: Colors.blue,
+                        color: Colors.pink[800],
                         child: new Text(
                           "Aucun visage",
-                          style: const TextStyle(
-                              color: Colors.blue,
+                          style: new TextStyle(
+                              color: Colors.pink[800],
                               fontSize: 50.0
                           ),
 
@@ -375,8 +375,8 @@ class _ResultsPageState extends State<ResultsPage> {
       return new Center(
         child: new Text(
           "Analyse en cours ...",
-          style: const TextStyle(
-            color: Colors.blue,
+          style: new TextStyle(
+            color: Colors.pink[800],
             fontSize: 30.0,
           ),
         ),
@@ -418,7 +418,7 @@ class _ResultsPageState extends State<ResultsPage> {
     );
     return new Scaffold(
       appBar: new AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.pink[800],
         title: new Text(
             "Résultats",
             style: const TextStyle(color: Colors.white)

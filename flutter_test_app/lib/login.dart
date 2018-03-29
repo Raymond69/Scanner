@@ -74,7 +74,7 @@ class _LoginPageState extends State<Login> {
     else {
       Scaffold.of(context).showSnackBar(
           new SnackBar(
-            backgroundColor: Colors.blue,
+            backgroundColor: Colors.pink[800],
             content: new Text("Erreur lors de la connection!"),
           )
       );
@@ -121,7 +121,7 @@ class _LoginPageState extends State<Login> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 new Padding(padding: new EdgeInsets.only(top: 30.0)),
-                new Text("SCANNER", style: const TextStyle(fontSize: 50.0, fontFamily: 'Sifonn', color: Colors.blue)),
+                new Text("SCANNER", style: new TextStyle(fontSize: 50.0, fontFamily: 'Sifonn', color: Colors.pink[800])),
                 new Form(
                   key: _formKey,
                   child: new Padding(
@@ -130,16 +130,16 @@ class _LoginPageState extends State<Login> {
                       children: <Widget>[
                         new Padding(padding: new EdgeInsets.only(top: 10.0)),
                         new TextFormField(
-                          style: new TextStyle(fontSize: 20.0, color: Colors.blue),
+                          style: new TextStyle(fontSize: 20.0, color: Colors.pink[800]),
                           decoration: new InputDecoration(
                               icon: new Icon(Icons.email),
                               filled: true,
                               fillColor: Colors.transparent,
                               hintText: "Adresse email",
-                              hintStyle: new TextStyle(fontSize: 20.0, color: Colors.blue),
+                              hintStyle: new TextStyle(fontSize: 20.0, color: Colors.pink[800]),
                               contentPadding: new EdgeInsets.fromLTRB(10.0, 30.0, 10.0, 10.0),
                               border: new OutlineInputBorder(
-                                  borderSide: new BorderSide(width: 1.0, color: Colors.blue),
+                                  borderSide: new BorderSide(width: 1.0, color: Colors.pink[800]),
                                   borderRadius: new BorderRadius.circular(20.0)
                               )
                           ),
@@ -148,16 +148,16 @@ class _LoginPageState extends State<Login> {
                         ),
                         new Padding(padding: new EdgeInsets.only(top: 15.0)),
                         new TextFormField(
-                          style: new TextStyle(fontSize: 20.0, color: Colors.blue),
+                          style: new TextStyle(fontSize: 20.0, color: Colors.pink[800]),
                           decoration: new InputDecoration(
                               icon: new Icon(Icons.lock),
                               filled: true,
                               fillColor: Colors.transparent,
                               hintText: "Mot de passe",
-                              hintStyle: new TextStyle(fontSize: 20.0, color: Colors.blue),
+                              hintStyle: new TextStyle(fontSize: 20.0, color: Colors.pink[800]),
                               contentPadding: new EdgeInsets.fromLTRB(10.0, 30.0, 10.0, 10.0),
                               border: new OutlineInputBorder(
-                                  borderSide: new BorderSide(width: 1.0, color: Colors.blue),
+                                  borderSide: new BorderSide(width: 1.0, color: Colors.pink[800]),
                                   borderRadius: new BorderRadius.circular(20.0)
                               )
                           ),
@@ -168,7 +168,7 @@ class _LoginPageState extends State<Login> {
                         new MaterialButton(
                           height: 40.0,
                           minWidth: 200.0,
-                          color: Colors.blue,
+                          color: Colors.pink[800],
                           onPressed: () {
                             _submitLogin()
                                 .then((FirebaseUser user) => _runLogin(context, user))
@@ -194,7 +194,7 @@ class _LoginPageState extends State<Login> {
                         new MaterialButton(
                           height: 40.0,
                           minWidth: 200.0,
-                          color: Colors.blue,
+                          color: Colors.pink[800],
                           onPressed: () => Navigator.pushNamed(context, "/signup"),
                           child: new Text(
                               'Créer un compte',
@@ -206,7 +206,7 @@ class _LoginPageState extends State<Login> {
                           onPressed: () => Navigator.pushNamed(context, "/password"),
                           child: new Text(
                               "mot de passe oublié ?",
-                              style: const TextStyle(color: Colors.blue)
+                              style: new TextStyle(color: Colors.pink[800])
                           ),
                         ),
                         new Padding(padding: new EdgeInsets.only(top: 30.0)),

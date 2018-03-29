@@ -137,7 +137,7 @@ class _HomePageState extends State<HomePage> {
                 builder: (context, constraints) {
                   return new Icon(
                     Icons.camera,
-                    color: Colors.blue,
+                    color: Colors.pink[800],
                     size: constraints.biggest.height,
                   );
                 },

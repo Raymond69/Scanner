@@ -24,7 +24,7 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.pink[800],
         title: new Text(
             "Créer un compte",
             style: const TextStyle(color: Colors.white),

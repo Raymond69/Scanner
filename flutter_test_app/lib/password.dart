@@ -22,7 +22,7 @@ class _PasswordPageState extends State<PasswordPage> {
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: new AppBar(
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.pink[800],
           title: new Text(
             "Mot de passe oublié",
             style: const TextStyle(color: Colors.white),
