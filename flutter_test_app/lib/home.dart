@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
 
     inactiveCamera = widget.cameras[1];
 
-    controller = new CameraController(widget.cameras[0], ResolutionPreset.medium);
+    controller = new CameraController(widget.cameras[0], ResolutionPreset.high);
     controller.initialize().then((_) {
       if (!mounted) {
         return;
