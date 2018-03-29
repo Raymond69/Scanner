@@ -96,7 +96,6 @@ class _ResultsPageState extends State<ResultsPage> {
     String path;
 
     if (value > max) {
-      print(value);
       switch (key) {
         case 'anger' :
           path = "assets/icons/anger.png";

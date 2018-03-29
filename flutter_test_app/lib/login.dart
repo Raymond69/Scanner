@@ -22,6 +22,7 @@ class Login extends StatefulWidget {
 class _LoginPageState extends State<Login> {
   String _email;
   String _password;
+  FirebaseUser user;
   final _scaffoldKey = new GlobalKey<ScaffoldState>();
   final _formKey = new GlobalKey<FormState>();
 
@@ -30,6 +31,14 @@ class _LoginPageState extends State<Login> {
   void initState() {
     super.initState();
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+
+    if (user != null) {
+      Navigator.pushReplacement(context, new MaterialPageRoute(
+          builder: (BuildContext context) => new HomePage(cameras: widget.cameras, user: user)
+        )
+      );
+    }
+
   }
 
   /* Checker le formulaire de Login et trigger la connection*/
@@ -39,12 +48,16 @@ class _LoginPageState extends State<Login> {
     if (form.validate()) {
       form.save();
 
-      final FirebaseUser user = await _auth.signInWithEmailAndPassword(
+      FirebaseUser signedInUser = await _auth.signInWithEmailAndPassword(
           email: _email,
           password: _password
       );
 
-      return user;
+      setState(() {
+        user = signedInUser;
+      });
+
+      return signedInUser;
     }
 
     return null;
@@ -53,7 +66,7 @@ class _LoginPageState extends State<Login> {
   /* Trigger l'authentification Firebase */
   void _runLogin(BuildContext context, FirebaseUser user) {
     if (user != null) {
-      Navigator.push(context, new MaterialPageRoute(
+      Navigator.pushReplacement(context, new MaterialPageRoute(
           builder: (BuildContext context) => new HomePage(cameras: widget.cameras, user: user)
         )
       );

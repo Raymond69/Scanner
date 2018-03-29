@@ -194,7 +194,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
       return new AspectRatio(
-          aspectRatio: controller.value.aspectRatio,
+          aspectRatio: 10.0,
           child: new Stack(
             children: <Widget>[
               new CameraPreview(
