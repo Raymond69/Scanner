@@ -314,9 +314,94 @@ class _ResultsPageState extends State<ResultsPage> {
           );
         }
         break;
-//      case 'accessories' :
-//        print('accessories');
-//        break;
+      case 'accessories' :
+        allCards.add(
+            new Container(
+              margin: new EdgeInsets.only(left: 10.0, right: 10.0),
+              width: MediaQuery.of(context).size.width - 50.0,
+              child: new Card(
+                elevation: 2.0,
+                child: new Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    new Padding(padding: new EdgeInsets.only(top: 10.0)),
+                    new Center(
+                      child: new Title(
+                          color: Colors.pink[800],
+                          child: new Text(
+                            "accessories",
+                            style: new TextStyle(
+                                color: Colors.pink[800],
+                                fontSize: 50.0
+                            ),
+
+                          )
+                      ),
+                    ),
+                    new Padding(padding: new EdgeInsets.only(top: 70.0)),
+                    new Center(
+                      child: new Container(
+                          width: 100.0,
+                          height: 100.0,
+                          child: new Text(
+                            "",
+                            style: new TextStyle(
+                                color: Colors.pink[800],
+                                fontSize: 40.0
+                            ),
+                          )
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            )
+        );
+        break;
+      case 'hair' :
+        allCards.add(
+            new Container(
+              margin: new EdgeInsets.only(left: 10.0, right: 10.0),
+              width: MediaQuery.of(context).size.width - 50.0,
+              child: new Card(
+                elevation: 2.0,
+                child: new Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    new Padding(padding: new EdgeInsets.only(top: 10.0)),
+                    new Center(
+                      child: new Title(
+                          color: Colors.pink[800],
+                          child: new Text(
+                            "hair",
+                            style: new TextStyle(
+                                color: Colors.pink[800],
+                                fontSize: 50.0
+                            ),
+
+                          )
+                      ),
+                    ),
+                    new Padding(padding: new EdgeInsets.only(top: 70.0)),
+                    new Center(
+                      child: new Container(
+                          width: 100.0,
+                          height: 100.0,
+                          child: new Text(
+                            "",
+                            style: new TextStyle(
+                                color: Colors.pink[800],
+                                fontSize: 40.0
+                            ),
+                          )
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            )
+        );
+        break;
     }
   }
 
