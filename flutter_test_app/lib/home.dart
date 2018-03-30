@@ -2,15 +2,18 @@ import 'dart:io';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:path_provider/path_provider.dart';
 import 'results.dart';
+import 'profile.dart';
 import 'dart:async';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key, this.cameras, this.user}) : super(key: key);
+  HomePage({Key key, this.cameras, this.user, this.googleUser}) : super(key: key);
 
   final List<CameraDescription> cameras;
   final FirebaseUser user;
+  final GoogleSignIn googleUser;
 
   @override
   _HomePageState createState() => new _HomePageState();
@@ -147,7 +150,10 @@ class _HomePageState extends State<HomePage> {
         );
         buttons.add(
           new FlatButton(
-            onPressed: null,
+            onPressed: () => Navigator.push(context, new MaterialPageRoute(
+                builder: (BuildContext context) => new ProfilePage(googleUser: widget.googleUser),
+              )
+            ),
             child: new Image.asset(
               "assets/icons/profile.png",
               width: 35.0,

@@ -6,6 +6,7 @@ import 'home.dart';
 import 'password.dart';
 import 'signup.dart';
 import 'results.dart';
+import 'profile.dart';
 
 List<CameraDescription> cameras;
 
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
         '/password': (_) => new PasswordPage(),
         '/camera': (_) => new HomePage(cameras: cameras),
         '/results': (_) => new ResultsPage(),
+        '/profile': (_) => new ProfilePage(),
       },
     );
   }

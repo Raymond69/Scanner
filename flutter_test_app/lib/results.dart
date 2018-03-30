@@ -142,6 +142,7 @@ class _ResultsPageState extends State<ResultsPage> {
               margin: new EdgeInsets.only(left: 10.0, right: 10.0),
               width: MediaQuery.of(context).size.width - 50.0,
               child: new Card(
+                elevation: 2.0,
                 child: new Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
@@ -183,6 +184,7 @@ class _ResultsPageState extends State<ResultsPage> {
               margin: new EdgeInsets.only(left: 10.0, right: 10.0),
               width: MediaQuery.of(context).size.width - 50.0,
               child: new Card(
+                elevation: 2.0,
                 child: new Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
@@ -203,13 +205,13 @@ class _ResultsPageState extends State<ResultsPage> {
                     new Padding(padding: new EdgeInsets.only(top: 70.0)),
                     new Center(
                       child: new Container(
-                        width: 250.0,
-                        height: 250.0,
+                        width: 100.0,
+                        height: 100.0,
                         child: new Text(
-                          "${value.toStringAsFixed(0)} yo",
+                          "${value.toStringAsFixed(0)}yo",
                           style: new TextStyle(
                               color: Colors.pink[800],
-                              fontSize: 60.0
+                              fontSize: 40.0
                           ),
                         )
                       ),
@@ -227,6 +229,7 @@ class _ResultsPageState extends State<ResultsPage> {
               margin: new EdgeInsets.only(left: 10.0, right: 10.0),
               width: MediaQuery.of(context).size.width - 50.0,
               child: new Card(
+                elevation: 2.0,
                 child: new Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
@@ -276,6 +279,7 @@ class _ResultsPageState extends State<ResultsPage> {
                 margin: new EdgeInsets.only(left: 10.0, right: 10.0),
                 width: MediaQuery.of(context).size.width - 50.0,
                 child: new Card(
+                  elevation: 2.0,
                   child: new Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
@@ -403,10 +407,26 @@ class _ResultsPageState extends State<ResultsPage> {
       ),
       renderSuccess: ({data}) => new ListView(
         children: <Widget>[
-          new Image.file(
-            new File(widget.imagePath),
+          new Container(
+              decoration: new BoxDecoration(
+                color: Colors.grey,
+                image: new DecorationImage(
+                  colorFilter: new ColorFilter.mode(Colors.white.withOpacity(0.2), BlendMode.dstATop),
+                  image: new AssetImage('assets/images/obj.jpg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
             width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
+            height: MediaQuery.of(context).size.height / 2,
+            child: new Center(
+              child: new ClipRRect(
+                child: new Image.file(
+                  new File(widget.imagePath),
+                  width: 150.0,
+                ),
+                borderRadius: new BorderRadius.circular(30.0),
+              )
+            )
           ),
           new Padding(
             padding: new EdgeInsets.all(10.0),

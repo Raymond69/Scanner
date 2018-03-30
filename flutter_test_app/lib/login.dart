@@ -67,7 +67,7 @@ class _LoginPageState extends State<Login> {
   void _runLogin(BuildContext context, FirebaseUser user) {
     if (user != null) {
       Navigator.pushReplacement(context, new MaterialPageRoute(
-          builder: (BuildContext context) => new HomePage(cameras: widget.cameras, user: user)
+          builder: (BuildContext context) => new HomePage(cameras: widget.cameras, user: user, googleUser: _googleSignIn)
         )
       );
     }
